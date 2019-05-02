@@ -6,9 +6,11 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=fuel_dev',
+			'dsn'        => 'mysql:host=agricola-log_mysql_1;dbname=agricola-log',
 			'username'   => 'root',
-			'password'   => 'root',
+			'password'   => 'passw0rd',
+			'persistent' => false,
+			'compress'   => false,
 		),
 	),
 );

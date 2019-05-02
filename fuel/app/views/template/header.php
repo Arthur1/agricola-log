@@ -18,9 +18,9 @@
 	<li><div class="divider"></div></li>
 	<?php endif; ?>
 	<?php if (OAuth::check()): ?>
-	<li><?= Html::anchor('/home', 'マイページ'); ?></li>
+	<li><?= Html::anchor('/', 'マイページ'); ?></li>
 	<?php else: ?>
-	<li><?= Html::anchor('/login', 'ログイン'); ?></li>
+	<li><?= Html::anchor('/oauth/login', 'ログイン'); ?></li>
 	<?php endif; ?>
 </ul>
 <header class="navbar-fixed">
@@ -40,9 +40,9 @@
 				<li><?= Html::anchor('/edit', '戦績入力'); ?></li>
 				<?php endif; ?>
 				<?php if (OAuth::check()): ?>
-				<li><?= Html::anchor('/home', 'マイページ'); ?></li>
+				<li><?= Html::anchor('/', 'マイページ'); ?></li>
 				<?php else: ?>
-				<li><?= Html::anchor('/login', 'ログイン'); ?></li>
+				<li><?= Html::anchor('/oauth/login', 'ログイン'); ?></li>
 				<?php endif; ?>
 			</ul>
 		</div>
