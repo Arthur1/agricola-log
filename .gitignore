@@ -39,3 +39,6 @@ node_modules
 # webpack
 /public/assets/css/*
 /public/assets/js/*
+
+# upload
+/public/assets/img/upload/*/*
