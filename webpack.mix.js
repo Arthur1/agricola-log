@@ -13,4 +13,6 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/materialize.js', 'public/assets/js')
     .js('resources/js/template.js', 'public/assets/js')
-    .sass('resources/sass/app.scss', 'public/assets/css');
+    .js('resources/js/edit_step1.js', 'public/assets/js')
+    .sass('resources/sass/app.scss', 'public/assets/css')
+    .sass('resources/sass/app_async.scss', 'public/assets/css');
