@@ -11,14 +11,15 @@
 		</div>
 	</li>
 	<?php endif; ?>
-	<li><?= Html::anchor('/', '<i class="material-icons">home</i>TOP'); ?></li>
+	<li><?= Html::anchor('/about', '<i class="material-icons">home</i>ABOUT'); ?></li>
 	<?php if (OAuth::check()): ?>
 	<li><?= Html::anchor('/games', '<i class="material-icons">star_rate</i>戦績'); ?></li>
-	<li><?= Html::anchor('/edit', '<i class="material-icons">find_in_page</i>戦績入力'); ?></li>
-	<li><div class="divider"></div></li>
+	<li><?= Html::anchor('/edit/step1', '<i class="material-icons">find_in_page</i>戦績入力'); ?></li>
 	<?php endif; ?>
+	<li><div class="divider"></div></li>
 	<?php if (OAuth::check()): ?>
 	<li><?= Html::anchor('/', 'マイページ'); ?></li>
+	<li><?= Html::anchor('/oauth/logout', 'ログアウト'); ?></li>
 	<?php else: ?>
 	<li><?= Html::anchor('/oauth/login', 'ログイン'); ?></li>
 	<?php endif; ?>
@@ -27,7 +28,7 @@
 	<nav>
 		<div class="nav-wrapper">
 			<div class="hide-on-med-and-down left">
-				<?= Html::anchor('/', 'LogRicola', ['class' => 'breadcrumb']); ?>
+				<?= Html::anchor('/about', 'LogRicola', ['class' => 'breadcrumb']); ?>
 				<?php foreach ($breadcrumbs ?? [] as $uri => $name): ?>
 				<?= Html::anchor($uri, $name, ['class' => 'breadcrumb']); ?>
 				<?php endforeach; ?>
@@ -35,12 +36,14 @@
 			<?= Html::anchor(Input::uri(), $title ?? '', ['class' => 'hide-on-large-only', 'style' => 'font-size: 1.3em;']); ?>
 			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
+				<li><?= Html::anchor('/about', 'ABOUT'); ?></li>
 				<?php if (OAuth::check()): ?>
 				<li><?= Html::anchor('/games', '戦績'); ?></li>
-				<li><?= Html::anchor('/edit', '戦績入力'); ?></li>
+				<li><?= Html::anchor('/edit/step1', '戦績入力'); ?></li>
 				<?php endif; ?>
 				<?php if (OAuth::check()): ?>
 				<li><?= Html::anchor('/', 'マイページ'); ?></li>
+				<li><?= Html::anchor('/oauth/logout', 'ログアウト'); ?></li>
 				<?php else: ?>
 				<li><?= Html::anchor('/oauth/login', 'ログイン'); ?></li>
 				<?php endif; ?>

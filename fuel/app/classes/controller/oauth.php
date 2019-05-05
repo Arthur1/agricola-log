@@ -29,6 +29,10 @@ class Controller_Oauth extends Controller
 	public function get_callback()
 	{
 		if (Input::get('denied')) {
+			if (OAuth::check()) {
+				OAuth::logout();
+				Utils::set_flash_messages([Constants::LOGOUT_SUCCESS_MESSAGE]);
+			}
 			return Response::redirect('/about');
 		}
 
@@ -76,13 +80,14 @@ class Controller_Oauth extends Controller
 		$user_name = $user_data->name;
 		OAuth::login($access_token, $user_name, $icon);
 
-		Session::set_flash('messages', ['ログインしました']);
+		Utils::set_flash_messages([Constants::LOGIN_SUCCESS_MESSAGE]);
 		return Response::redirect('');
 	}
 
 	public function get_logout()
 	{
 		OAuth::logout();
+		Session::set_flash('messages', [Constants::LOGOUT_SUCCESS_MESSAGE]);
 		return Response::redirect('/about');
 	}
 

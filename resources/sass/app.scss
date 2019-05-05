@@ -27,3 +27,27 @@ $major-improvement-color: color("pink", "darken-2");
 .major_improvement-text {
 	color: $major-improvement-color !important;
 }
+
+.counter {
+	text-align: center;
+}
+.counter_label {
+	display: inline-block;
+	text-align: center;
+	width: 25%;
+}
+.counter_number {
+	display: inline-block;
+	text-align: center;
+	width: 15%;
+}
+.counter_points {
+	display: inline-block;
+	text-align: center;
+	color: grey;
+	width: 15%;
+}
+.btn_inc, .btn_dec {
+	width: 15%;
+	max-width: 70px;
+}

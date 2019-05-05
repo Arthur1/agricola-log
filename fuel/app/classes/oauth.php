@@ -6,7 +6,7 @@ class OAuth
 	const USER_NAME_KEY = 'user_name';
 	const ICON_KEY = 'icon';
 	const OAUTH_TOKEN_KEY = 'oauth_token';
-	const OAUTH_TOKEN_SECRET_KEY = 'oauth_token_sectet';
+	const OAUTH_TOKEN_SECRET_KEY = 'oauth_token_secret';
 	const ACCESS_TOKEN_KEY = 'access_token';
 
 	/**

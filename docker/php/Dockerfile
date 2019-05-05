@@ -18,7 +18,7 @@ RUN cd /var/www && \
     curl https://get.fuelphp.com/oil | sh
 
 RUN echo "file_uploads = On\n" \
-         "memory_limit = 10M\n" \
+         "memory_limit = 128M\n" \
          "upload_max_filesize = 10M\n" \
          "post_max_size = 10M\n" \
          "max_execution_time = 600\n" \
