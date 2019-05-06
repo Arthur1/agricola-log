@@ -2,7 +2,7 @@
 	<h2 class="orange-text">ゲーム情報</h2>
 	<div class="collection">
 		<div class="collection-item">
-			<?= $data['players_number']; ?>人ゲーム / <?= Constants::REGULATION_TYPE_LIST[$data['regulation_type']]; ?><?php if ($data['is_moor']) echo '(泥沼)'; ?><br>
+			<?= $data['players_number']; ?>人ゲーム / <?= Constants::REGULATION_TYPE_LIST[$data['regulation_type']]; ?><?php if ($data['is_moor']) echo '(泥沼)'; ?> / <?= $data['player_order']; ?>番手<br>
 			[<?= $data['created_at']; ?>]
 		</div>
 	</div>

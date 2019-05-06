@@ -32,7 +32,7 @@ const calc = {
 	grain: (number) => {
 		switch (number) {
 			case 0:
-				return -1
+				return -1;
 			case 1:
 			case 2:
 			case 3:
@@ -64,7 +64,7 @@ const calc = {
 	sheep: (number) => {
 		switch (number) {
 			case 0:
-				return -1
+				return -1;
 			case 1:
 			case 2:
 			case 3:
@@ -123,20 +123,16 @@ const calc = {
 	},
 	stable: (number) => {
 		switch (number) {
-			case 0:
-				return -1
 			case 1:
-			case 2:
-			case 3:
 				return 1;
-			case 4:
-			case 5:
+			case 2:
 				return 2;
-			case 6:
-			case 7:
+			case 3:
 				return 3;
-			default:
+			case 4:
 				return 4;
+			default:
+				return 0;
 		}
 	},
 	clay_rooms: (number) => {
