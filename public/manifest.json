@@ -4,6 +4,7 @@
 	"start_url": "https://log.buratsuki.work/",
 	"display": "standalone",
 	"theme_color": "#FE9800",
+	"background_color": "#FFFFFF",
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.png",
