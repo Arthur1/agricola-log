@@ -9,6 +9,7 @@ class Controller_Index extends Controller_Template
 			'/' => 'マイページ',
 		];
 		$this->template->content = View::forge('index');
+		Asset::js(['index.js'], [], 'add_js');
 	}
 }
 

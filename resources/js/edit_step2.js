@@ -18,6 +18,7 @@ const calc = {
 	pastures: (number) => {
 		switch (number) {
 			case 0:
+				return -1;
 			case 1:
 				return 1;
 			case 2:
@@ -49,6 +50,7 @@ const calc = {
 	vegetable: (number) => {
 		switch (number) {
 			case 0:
+				return -1;
 			case 1:
 				return 1;
 			case 2:
@@ -206,13 +208,6 @@ const numberMaxList = {
 const form = document.forms[0];
 const counters = document.querySelectorAll('.counter');
 
-document.addEventListener('DOMContentLoaded', () => {
-	counters.forEach((counter) => {
-		const numberMin = numberMinList[counter.dataset.category];
-		counter.querySelector('.btn_dec').disabled = (-1 < numberMin);
-	});
-});
-
 counters.forEach((counter) => {
 	let category = counter.dataset.category;
 	let btnInc = counter.querySelector('.btn_inc');
@@ -243,19 +238,26 @@ counters.forEach((counter) => {
 		M.updateTextFields();
 	};
 
-	btnInc.addEventListener('click', () => {
-		let number = parseInt(counterNumber.innerHTML);
-		counterNumber.innerHTML = ++number;
+	const update = (number) => {
 		updatePoints(number);
 		updateBtnState(number);
 		updateTotalPoints();
+	};
+
+	document.addEventListener('DOMContentLoaded', () => {
+		let number = parseInt(counterNumber.innerHTML);
+		update(number);
+	});
+
+	btnInc.addEventListener('click', () => {
+		let number = parseInt(counterNumber.innerHTML);
+		counterNumber.innerHTML = ++number;
+		update(number);
 	});
 
 	btnDec.addEventListener('click', () => {
 		let number = parseInt(counterNumber.innerHTML);
 		counterNumber.innerHTML = --number;
-		updatePoints(number);
-		updateBtnState(number);
-		updateTotalPoints();
+		update(number);
 	});
 });
