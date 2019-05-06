@@ -48,12 +48,22 @@ class Controller_Games extends Controller_Template
 	public function get_index()
 	{
 		Utils::login_check();
+		$user_id = OAuth::get('user_id');
 		$this->template->title = '戦績';
 		$this->template->breadcrumbs = [
 			'/games' => '戦績',
 		];
-		// $this->template->content = View::forge('games/index');
-		// $this->template->content->data = $data;
+
+		$count = Model_Games::count_list($user_id);
+		$pagination = Pagination::forge('games', [
+			'pagination_url' => Uri::create('games'),
+			'uri_segment' => 'p',
+			'per_page' => 10,
+			'total_items' => $count,
+		]);
+
+		$this->template->content = View::forge('games/index');
+		$this->template->content->games_list = Model_Games::get_list($user_id, $pagination);
 	}
 
 	public function get_view($game_id)
@@ -71,6 +81,21 @@ class Controller_Games extends Controller_Template
 		];
 		$this->template->content = View::forge('games/view');
 		$this->template->content->data = $data;
+		Asset::js(['games_view.js'], [], 'add_js');
+	}
+
+	public function post_view($game_id) {
+		$this->get_view($game_id);
+		if (! Security::check_token()) {
+			$this->template->errors = Constants::CSRF_ERROR_MESSAGE;
+			return;
+		}
+
+		if (Input::post('submit') === '削除する') {
+			Model_Games::delete_by_pk($game_id);
+			Utils::set_flash_messages([Constants::DELETE_SUCCESS_MESSAGE]);
+			Response::redirect('/');
+		}
 	}
 
 	public function get_tweet($game_id)

@@ -7,6 +7,9 @@
 	<div class="center-align">
 		<?= Html::anchor('oauth/login', 'Twitterでログイン', ['class' => 'btn btn-large blue']); ?>
 	</div>
+	<p>
+		※自動的にツイート、フォローする事はありません
+	</p>
 	<?php endif; ?>
 	<h2 class="teal-text" id="howto">使い方</h2>
 	<ol>

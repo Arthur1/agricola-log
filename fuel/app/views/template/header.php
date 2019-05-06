@@ -11,10 +11,10 @@
 		</div>
 	</li>
 	<?php endif; ?>
-	<li><?= Html::anchor('/about', '<i class="material-icons">home</i>ABOUT'); ?></li>
+	<li><?= Html::anchor('/about', '<i class="material-icons">help_outline</i>ABOUT'); ?></li>
 	<?php if (OAuth::check()): ?>
-	<li><?= Html::anchor('/games', '<i class="material-icons">star_rate</i>戦績'); ?></li>
-	<li><?= Html::anchor('/edit/step1', '<i class="material-icons">find_in_page</i>戦績入力'); ?></li>
+	<li><?= Html::anchor('/games', '<i class="material-icons">import_contacts</i>戦績'); ?></li>
+	<li><?= Html::anchor('/edit/step1', '<i class="material-icons">add</i>戦績入力'); ?></li>
 	<?php endif; ?>
 	<li><div class="divider"></div></li>
 	<?php if (OAuth::check()): ?>
@@ -28,7 +28,11 @@
 	<nav>
 		<div class="nav-wrapper">
 			<div class="hide-on-med-and-down left">
+				<?php if (OAuth::check()): ?>
+				<?= Html::anchor('/', 'LogRicola', ['class' => 'breadcrumb']); ?>
+				<?php else: ?>
 				<?= Html::anchor('/about', 'LogRicola', ['class' => 'breadcrumb']); ?>
+				<?php endif; ?>
 				<?php foreach ($breadcrumbs ?? [] as $uri => $name): ?>
 				<?= Html::anchor($uri, $name, ['class' => 'breadcrumb']); ?>
 				<?php endforeach; ?>

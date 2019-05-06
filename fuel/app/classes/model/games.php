@@ -31,13 +31,29 @@ class Model_Games
 		return $query->execute()->as_array()[0] ?? null;
 	}
 
+	public static function count_list(string $user_id)
+	{
+		$query = DB::select(DB::expr('COUNT(*) AS `count`'))
+					->from(self::TABLE_NAME)
+					->where('user_id', '=', $user_id);
+		return $query->execute()->as_array()[0]['count'] ?? 0;
+	}
+
 	public static function get_list(string $user_id, $pagination)
 	{
 		$query = DB::select()
 					->from(self::TABLE_NAME)
 					->where('user_id', '=', $user_id)
 					->order_by('created_at', 'desc')
-					->limit(1);
+					->limit($pagination->per_page)
+					->offset($pagination->offset);
 		return $query->execute()->as_array();
+	}
+
+	public static function delete_by_pk(string $game_id)
+	{
+		$query = DB::delete(self::TABLE_NAME)
+					->where('game_id', '=', $game_id);
+		return $query->execute();
 	}
 }

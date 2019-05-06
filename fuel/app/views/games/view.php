@@ -49,10 +49,10 @@
 			<?= Asset::img($data['image'], ['class' => 'responsive-img']); ?>
 		</div>
 	</div>
-	<h3 class="red-text">メニュー</h3>
+	<h3 class="teal-text">メニュー</h3>
 	<div class="collection">
-		<?= Html::anchor('/games/tweet/' . $data['game_id'], 'Twitterに投稿', ['class' => 'collection-item']); ?>
-		<?= Html::anchor('#modal_delete', 'ゲーム削除', ['class' => 'modal-trigger collection-item']); ?>
+		<?= Html::anchor('/games/tweet/' . $data['game_id'], 'Twitterに投稿', ['class' => 'collection-item blue-text']); ?>
+		<?= Html::anchor('#modal_delete', 'ゲーム削除', ['class' => 'modal-trigger collection-item red-text']); ?>
 	</div>
 </div>
 <?= Form::open(); ?>

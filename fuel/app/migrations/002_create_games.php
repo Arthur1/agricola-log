@@ -41,7 +41,7 @@ class Create_Games
 			'InnoDB',
 			'utf8_unicode_ci'
         );
-        \DBUtil::create_index(self::TABLE_NAME, ['user_id']);
+        \DBUtil::create_index(self::TABLE_NAME, ['user_id', 'created_at']);
 	}
 
 	public function down()

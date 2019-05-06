@@ -81,4 +81,5 @@ class Constants
 	const NOT_LOGIN_MESSAGE = '再度ログインしてください';
 	const CSRF_ERROR_MESSAGE = 'お手数ですが、再度送信してください';
 	const TWEET_SUCCESS_MESSAGE = 'ツイートしました';
+	const DELETE_SUCCESS_MESSAGE = '戦績を削除しました';
 }
