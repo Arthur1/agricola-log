@@ -35,7 +35,11 @@ desktop.ini
 # docker
 /docker/mysql/*
 node_modules
+/docker/nginx/server.conf
 
 # webpack
 /public/assets/css/*
 /public/assets/js/*
+
+# upload
+/public/assets/img/upload/*/*

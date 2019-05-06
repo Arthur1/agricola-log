@@ -11,6 +11,9 @@
 				</h5>
 				<ul>
 					<li>
+						<?= Html::anchor('about#howto', '使い方', ['class' => 'grey-text text-lighten-3']); ?>
+					</li>
+					<li>
 						<?= Html::anchor('about#browser', '推奨環境', ['class' => 'grey-text text-lighten-3']); ?>
 					</li>
 					<li>
@@ -22,7 +25,7 @@
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			&copy; 2018-2019 Arthur
+			&copy; 2019 Arthur
 		</div>
 	</div>
 </footer>

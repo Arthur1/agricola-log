@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+'use strict';
+document.addEventListener('DOMContentLoaded', () => {
 	let elems = document.querySelectorAll('.sidenav');
 	M.Sidenav.init(elems, {});
 });
