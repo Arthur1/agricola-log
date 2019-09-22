@@ -235,7 +235,7 @@ class Controller_Edit extends Controller_Template
 		$image->resize($width, null, function($constraint) {
 			$constraint->aspectRatio();
 		});
-		$image->crop($width, $height, 0, ($image->height() - $height) / 2);
+		$image->crop($width, $height, 0, intdiv($image->height() - $height, 2));
 		$image->save($path);
 	}
 }
